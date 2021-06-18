@@ -11,6 +11,8 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "rsuite": "^4.10.2",
+    "survey-pdf": "^1.8.52",
+    "survey-react": "^1.8.52",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
