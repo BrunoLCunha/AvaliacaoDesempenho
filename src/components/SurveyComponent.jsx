@@ -4,10 +4,7 @@ import "survey-react/modern.css";
 //import "./index.css";
 
 Survey.StylesManager.applyTheme("modern");
-//https://surveyjs.io/examples/library/?id=survey-lazy&platform=Reactjs&theme=modern
-//82 radio group
-//94 Rating
-//
+//git remote add origin https://github.com/BrunoLCunha/AvaliacaoDesempenho
 class SurveyComponent extends Component {
 
 
@@ -31,37 +28,31 @@ class SurveyComponent extends Component {
 
     const json = {
         elements: [1],
-        title: "AVALIATOR",
+        showTitle: false,
         innerIndent: 1,
         progressBarType: "buttons",
         showProgressBar: "top",
         pages: [
             {
                 navigationTitle: "Desempenho",
-                navigationDescription: "Descrição SOBRE ESSA CATEGORIA",
-                
                 questions: [
-                {type: "text", name: "avaliador", title: "Nome do avaliador:", isRequired: true},
-                {type: "text", name: "funcionario", title: "Nome do funcionário:", isRequired: true},
                 {type: "rating", name: "desempenho1", title: "Seu funcionário é eficaz?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
-                {type: "text", name: "opcionalDesemp1", title: "Comentários adicionais:", isRequired: true},
+                {type: "text", name: "opcionalDesemp1", title: "Comentários adicionais:", isRequired: false},
                 {type: "rating", name: "desempenho2", title: "Seu funcionário é eficiente?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
-                {type: "text", name: "opcionalDesemp2", title: "Comentários adicionais:", isRequired: true}
+                {type: "text", name: "opcionalDesemp2", title: "Comentários adicionais:", isRequired: false}
                 ]
-            }]
-
-           /* [
+            },
             {
                 navigationTitle: "Comportamento",
-                navigationDescription: "Nessa seção você deverá avaliar o comportamento do seu funcionário",
+                //navigationDescription: "Nessa seção você deverá avaliar o comportamento do seu funcionário",
                 
                 questions: [
-                {type: "text", name: "funcionario", title: "Nome do funcionário:", isRequired: true},
+                {type: "text", name: "disponibilidade", title: "Seu funcionário é preguiçoso", isRequired: true},
                 {type: "rating", name: "desempenho1", title: "Seu funcionário é eficaz?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
                 {type: "rating", name: "desempenho2", title: "Seu funcionário é eficiente?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate }
                 ]
             }
-            ]*/
+            ]
     };
 
     const survey = new Survey.Model(json);
