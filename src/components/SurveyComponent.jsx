@@ -45,12 +45,13 @@ function SurveyComponent (props) {
     };
 
     const values = [1,2,3,4,5,6,7,8,9,10]
-    const maxRate = "Satisfatório"
-    const minRate = "Insuficiente"
+    const maxRate = "Muito"
+    const minRate = "Pouco"
 
     const json = {
         elements: [1],
-        showTitle: false,
+        title: "Avaliação",
+        showTitle: true,
         innerIndent: 1,
         ignoreValidation: true,
         progressBarType: "buttons",
@@ -60,11 +61,11 @@ function SurveyComponent (props) {
                 navigationTitle: "Desempenho",
                 //title: "Eficácia",
                 questions: [
-                {type: "rating", name: "desempenho1", title: "Quão eficaz é seu funcionário em suas tarefas?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "rating", name: "eficaz", title: "Quão eficaz é seu funcionário em suas tarefas?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
                 {type: "text", name: "opcional1", title: "Comentários adicionais:", isRequired: false},
                 //title: "Eficiencia",
                 {type: "rating", name: "desempenho2", title: "Quão eficiente é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
-                {type: "text", name: "opcional2", title: "Comentários adicionais:", isRequired: false}
+                {type: "text", name: "eficiente", title: "Comentários adicionais:", isRequired: false}
                 ]
             },
             {
@@ -85,15 +86,19 @@ function SurveyComponent (props) {
                 //desafiii Alek
                 {type: "rating", name: "cotidiano", title: "Quão propenso a engajar em atividades fora do cotidiano é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
                 {type: "text", name: "opcional8", title: "Comentários adicionais:", isRequired: false},
-                {type: "rating", name: "aprendizado", title: "Após executar uma tarefa nova, quão bem seu funcionário demonstra aprendizado?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "rating", name: "aprendizado", title: "Após executar uma tarefa nova, quão bem seu funcionário demonstra ter aprendido algo com ela?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
                 {type: "text", name: "opcional9", title: "Comentários adicionais:", isRequired: false},
                 //ética
                 {type: "rating", name: "erros", title: "Quão bem seu funcionário lida com erros cometidos por ele?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
-                {type: "text", name: "opcional10", title: "Comentários adicionais:", isRequired: false}
+                {type: "text", name: "opcional10", title: "Comentários adicionais:", isRequired: false},
+                {type: "rating", name: "resultados", title: "Quão mascarados são os resultados do seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional11", title: "Comentários adicionais:", isRequired: false},
+                {type: "rating", name: "fofocas", title: "Quanto a fofocas no ambiente de trabalho, quão informado seu funcionário se mantém?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional11", title: "Comentários adicionais:", isRequired: false}
                 ]
             },
             {
-                navigationTitle: "Habilidades socias/pessoais", 
+                navigationTitle: "Habilidades socias/pessoais",
                 questions: [
                 //resolução de problemas
                 {type: "rating", name: "resolucao", title: "Quão propenso a se envolver em discussões é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
