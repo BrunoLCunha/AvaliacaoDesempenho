@@ -87,7 +87,7 @@ function Sidebar({
 
         {/* Links */}
         <div>
-          <h3 className="text-xs uppercase font-semibold pl-3" style={{color:"white"}}>Pages</h3>
+          <h3 className="text-xs uppercase font-semibold text-gray-400 pl-3">Pages</h3>
           <ul className="mt-3">
           <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${page === '' && 'bg-gray-900'}`}>
               <NavLink exact to="/" className={`block text-gray-200 hover:text-white transition duration-150 ${page === '' && 'hover:text-gray-200'}`}>

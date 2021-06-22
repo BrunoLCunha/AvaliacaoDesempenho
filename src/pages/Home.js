@@ -25,7 +25,7 @@ function Home() {
         <main>
             {/* content */}
             <Container style={{textAlign: "center"}}>
-                <Button variant="secondary" href="/avaliacao" style={{position: "absolute", top: "50%"}}>Iniciar a Avaliação</Button>
+                <Button variant="success" href="/avaliacao" style={{position: "absolute", top: "50%"}}>Iniciar a Avaliação</Button>
             </Container>
         </main>
 
