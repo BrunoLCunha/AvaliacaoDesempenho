@@ -9,9 +9,11 @@ import './css/style.scss';
 
 import { focusHandling } from 'cruip-js-toolkit';
 import './charts/ChartjsConfig';
+import './css/bootstrap.min.css';
 
 // Import pages
-import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
+import Survey from './pages/Survey';
 
 function App() {
 
@@ -28,7 +30,10 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <Dashboard />
+          <Home />
+        </Route>
+        <Route exact path="/avaliacao">
+          <Survey />
         </Route>
       </Switch>
     </>

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
-import SurveyComponent from '../components/SurveyComponent';
-import Banner from '../partials/Banner';
 
-function Dashboard() {
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+
+function Home() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -22,9 +23,10 @@ function Dashboard() {
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         <main>
-            {/* Welcome banner */}
-            {/*<WelcomeBanner />*/}
-            <SurveyComponent/>
+            {/* content */}
+            <Container style={{textAlign: "center"}}>
+                <Button variant="secondary" href="/avaliacao" style={{position: "absolute", top: "50%"}}>Iniciar a Avaliação</Button>
+            </Container>
         </main>
 
       </div>
@@ -32,4 +34,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Home;
