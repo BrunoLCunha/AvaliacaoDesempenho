@@ -65,7 +65,7 @@ function SurveyComponent (props) {
                 {type: "text", name: "opcional1", title: "Comentários adicionais:", isRequired: false},
                 //title: "Eficiencia",
                 {type: "rating", name: "desempenho2", title: "Quão eficiente é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
-                {type: "text", name: "eficiente", title: "Comentários adicionais:", isRequired: false}
+                {type: "text", name: "opcional2", title: "Comentários adicionais:", isRequired: false}
                 ]
             },
             {
@@ -101,8 +101,37 @@ function SurveyComponent (props) {
                 navigationTitle: "Habilidades socias/pessoais",
                 questions: [
                 //resolução de problemas
-                {type: "rating", name: "resolucao", title: "Quão propenso a se envolver em discussões é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
-                {type: "text", name: "opcional", title: "Comentários adicionais:", isRequired: false}
+                {type: "rating", name: "discussao", title: "Quão propenso a se envolver em discussões é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional12", title: "Comentários adicionais:", isRequired: false},
+                {type: "rating", name: "discussao2", title: "Seu funcionário se envolve em muitas discussões que não o envolvem?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional13", title: "Comentários adicionais:", isRequired: false},
+                //comunicação
+                {type: "rating", name: "comunicacao", title: "Quão bem seu funcionário se comunica com outros colaboradores?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional14", title: "Comentários adicionais:", isRequired: false},
+                {type: "rating", name: "educacao", title: "Quão respeitoso seu funcionário se mostra em sua comunicação verbal e não verbal?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional15", title: "Comentários adicionais:", isRequired: false},
+                //sim ou não
+                {type: "rating", name: "feedback", title: "Seu funcionário está disposto a receber feedbacks?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional16", title: "Comentários adicionais:", isRequired: false},
+                {type: "rating", name: "feedbackruim", title: "Quão bem seu funcionário reage a um feedback negativo?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional17", title: "Comentários adicionais:", isRequired: false},
+                //proatividade sim ou não
+                {type: "rating", name: "ajuda", title: "Seu funcionário auxilia outros colaboradores quando necessário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional18", title: "Comentários adicionais:", isRequired: false},
+                {type: "rating", name: "proatividade", title: "Quão propenso a expressar suas ideias é seu funcionário?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional19", title: "Comentários adicionais:", isRequired: false},
+                //relacionamento interpessoal   MUDAR "RATING" PARA PERGUNTA DE SIM OU NÃO
+                {type: "rating", name: "discurso", title: "Seu funcionário tem dificuldade de lidar com pessoas diferentes dele (etnia, religião, orientação sexual, cargo)?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional20", title: "Comentários adicionais:", isRequired: false},
+                //colaboração com a equipe
+                {type: "rating", name: "colaboracao", title: "Quão bem seu funcionário consegue manter os colegas de equipe atualizados?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional21", title: "Comentários adicionais:", isRequired: false},
+                //relacionamento com a equipe
+                {type: "rating", name: "relacionamento", title: "Quão bem seu funcionário se relaciona com sua equipe?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional22", title: "Comentários adicionais:", isRequired: false},
+                //valores e diretrizes sim ou não
+                {type: "rating", name: "visao", title: "Seu funcionário segue as normas, diretrizes e visões da empresa?", isRequired: true, rateValues:values, maxRateDescription:maxRate, minRateDescription:minRate },
+                {type: "text", name: "opcional23", title: "Comentários adicionais:", isRequired: false}
                 ]
             }
             ]
