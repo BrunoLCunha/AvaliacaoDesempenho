@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Switch,
   Route,
@@ -30,10 +30,10 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home/>
         </Route>
         <Route exact path="/avaliacao">
-          <Survey />
+          <Survey/>
         </Route>
       </Switch>
     </>
