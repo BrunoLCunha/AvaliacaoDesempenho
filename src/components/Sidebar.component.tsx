@@ -88,7 +88,7 @@ function Sidebar(props: ISidebar) {
               </svg>
               <h1
                 className="text-2xl uppercase font-semibold pl-3"
-                style={{ color: "white", verticalAlign: "middle" }}
+                style={{ color: "#6b6b6b", verticalAlign: "middle" }}
               >
                 Avaliador
               </h1>
@@ -98,11 +98,8 @@ function Sidebar(props: ISidebar) {
 
         {/* Links */}
         <div>
-          <h3 className="text-xs uppercase font-semibold text-gray-400 pl-3">
-            Pages
-          </h3>
           <ul className="mt-3">
-            <li
+            {/* <li
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
                 page === "" && "bg-gray-900"
               }`}
@@ -155,7 +152,7 @@ function Sidebar(props: ISidebar) {
                   <span className="text-sm font-medium">Início</span>
                 </div>
               </NavLink>
-            </li>
+            </li> */}
             <li
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
                 page === "avaliacao" && "bg-gray-900"
