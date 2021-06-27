@@ -6,8 +6,6 @@ import {
 } from 'react-router-dom';
 
 import './css/style.scss';
-
-import './charts/ChartjsConfig';
 import './css/bootstrap.min.css';
 
 // Import pages

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Sidebar from "../components/Sidebar.component";
-import Header from "../partials/Header.component";
+import Header from "../components/Header.component";
 import SurveyComponent from "../components/Survey.component";
 import * as Survey from "survey-react";
 import { surveyJSON as json } from "../data/survey.data";
