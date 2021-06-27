@@ -13,7 +13,6 @@ function Home() {
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
         {/*  Site header */}
-        <Header />
 
         <main>
           {/* content */}

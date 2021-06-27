@@ -4,22 +4,49 @@ import * as S from "./Sidebar.styles";
 
 export interface ISidebar {
   setSurveyIndex: React.Dispatch<React.SetStateAction<number>>;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
   surveyIndex: number;
+  sidebarOpen: boolean;
 }
 
 function Sidebar(props: ISidebar) {
-  const { setSurveyIndex, surveyIndex } = props;
+  const { setSurveyIndex, surveyIndex, setSidebarOpen, sidebarOpen } = props;
   const location = useLocation();
   const { pathname } = location;
   const page = pathname.split("/")[1];
 
   const trigger = useRef(null);
+  const sidebar = useRef(null);
+
+  // close on click outside
+  useEffect(() => {
+    // @ts-ignore
+    const clickHandler = ({ target }) => {
+      if (!sidebar.current || !trigger.current) return;
+      // @ts-ignore
+      if (!sidebarOpen || sidebar.current.contains(target) || trigger.current.contains(target)) return;
+      setSidebarOpen(false);
+    };
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
+  });
+
+  // close if the esc key is pressed
+  useEffect(() => {
+    // @ts-ignore
+    const keyHandler = ({ keyCode }) => {
+      if (!sidebarOpen || keyCode !== 27) return;
+      setSidebarOpen(false);
+    };
+    document.addEventListener('keydown', keyHandler);
+    return () => document.removeEventListener('keydown', keyHandler);
+  });
 
   return (
     <div className="lg:w-64">
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${"opacity-100"}`}
+        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-hidden="true"
       ></div>
 
@@ -27,7 +54,7 @@ function Sidebar(props: ISidebar) {
       <div
         style={{ backgroundColor: "white" }}
         id="sidebar"
-        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 p-4 transition-transform bg-green-900 duration-200 ease-in-out ${"translate-x-0"}`}
+        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-green-900 p-4 transition-transform duration-200 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-64'}`}
       >
         {/* Sidebar header */}
         <div className="flex justify-between mb-10 pr-3 sm:px-2">
@@ -36,6 +63,8 @@ function Sidebar(props: ISidebar) {
             ref={trigger}
             className="lg:hidden text-gray-500 hover:text-gray-400"
             aria-controls="sidebar"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            aria-expanded={sidebarOpen}
           >
             <span className="sr-only">Close sidebar</span>
             <svg
