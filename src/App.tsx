@@ -11,8 +11,8 @@ import './charts/ChartjsConfig';
 import './css/bootstrap.min.css';
 
 // Import pages
-import Home from './pages/Home';
-import Survey from './pages/Survey';
+import Home from './pages/Home.page';
+import Survey from './pages/Survey.page';
 
 function App() {
 

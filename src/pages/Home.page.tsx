@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../partials/Header";
+import Header from "../partials/Header.component";
 
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -15,7 +15,7 @@ function Home() {
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
         {/*  Site header */}
-        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <Header/>
 
         <main>
           {/* content */}
