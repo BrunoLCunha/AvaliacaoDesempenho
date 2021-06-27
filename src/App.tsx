@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   Switch,
   Route,
@@ -7,7 +7,6 @@ import {
 
 import './css/style.scss';
 
-import { focusHandling } from 'cruip-js-toolkit';
 import './charts/ChartjsConfig';
 import './css/bootstrap.min.css';
 
@@ -20,10 +19,11 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    // @ts-ignore */
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
+    // @ts-ignore */
     document.querySelector('html').style.scrollBehavior = ''
-    focusHandling('outline');
   }, [location.pathname]); // triggered on route change
 
   return (

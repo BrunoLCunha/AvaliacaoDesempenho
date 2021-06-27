@@ -1,36 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from "react";
+import Header from "../partials/Header";
 
-import Sidebar from '../partials/Sidebar';
-import Header from '../partials/Header';
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-
-function Home({
-  setSurveyIndex
-}) {
-
+function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="flex h-screen overflow-hidden">
-
       {/* Sidebar */}
       {/* <Sidebar setSurveyIndex={setSurveyIndex} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
 
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-
         {/*  Site header */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         <main>
-            {/* content */}
-            <Container style={{textAlign: "center"}}>
-                <Button variant="success" href="/avaliacao" style={{position: "absolute", top: "50%"}}>Iniciar a Avaliação</Button>
-            </Container>
+          {/* content */}
+          <Container style={{ textAlign: "center" }}>
+            <Button
+              variant="success"
+              href="/avaliacao"
+              style={{ position: "absolute", top: "50%" }}
+            >
+              Iniciar a Avaliação
+            </Button>
+          </Container>
         </main>
-
       </div>
     </div>
   );

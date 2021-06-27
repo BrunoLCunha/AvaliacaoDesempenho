@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Sidebar from "../partials/Sidebar";
+import Sidebar from "../components/Sidebar.component";
 import Header from "../partials/Header";
 import SurveyComponent from "../components/SurveyComponent";
 import * as Survey from "survey-react";
@@ -9,7 +9,7 @@ function Home({}) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [saveData, setSaveData] = useState();
   const [surveyIndex, setSurveyIndex] = useState(0);
-  const [model, setModel] = useState();
+  const [model, setModel] = useState<Survey.ReactSurveyModel>();
 
   useEffect(() => {
     setModel(new Survey.Model(json));
@@ -436,8 +436,7 @@ function Home({}) {
       {/* Sidebar */}
       <Sidebar
         setSurveyIndex={setSurveyIndex}
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
+        surveyIndex={surveyIndex}
       />
 
       {/* Content area */}
