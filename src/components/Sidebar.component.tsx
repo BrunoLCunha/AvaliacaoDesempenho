@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import * as S from "./Sidebar.styles";
 
-export interface ISidebar{
-  setSurveyIndex: React.Dispatch<React.SetStateAction<number>>,
-  surveyIndex: number,
+export interface ISidebar {
+  setSurveyIndex: React.Dispatch<React.SetStateAction<number>>;
+  surveyIndex: number;
 }
 
 function Sidebar(props: ISidebar) {
@@ -25,7 +25,7 @@ function Sidebar(props: ISidebar) {
 
       {/* Sidebar */}
       <div
-        style={{backgroundColor: "white"}}
+        style={{ backgroundColor: "white" }}
         id="sidebar"
         className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 p-4 transition-transform bg-green-900 duration-200 ease-in-out ${"translate-x-0"}`}
       >
@@ -193,24 +193,39 @@ function Sidebar(props: ISidebar) {
                 </div>
               </NavLink>
             </li>
-            <li
-              
-            >
-              <S.SurveyNavButton style={{fontWeight: surveyIndex == 0 ? "bold" : "normal"}} onClick={() => setSurveyIndex(0)}>
+            <li>
+              <S.SurveyNavButton
+                style={
+                  surveyIndex === 0
+                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
+                    : {}
+                }
+                onClick={() => setSurveyIndex(0)}
+              >
                 Desempenho
               </S.SurveyNavButton>
             </li>
-            <li
-              
-            >
-              <S.SurveyNavButton style={{fontWeight: surveyIndex == 1 ? "bold" : "normal"}} onClick={() => setSurveyIndex(1)}>
+            <li>
+              <S.SurveyNavButton
+                style={
+                  surveyIndex === 1
+                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
+                    : {}
+                }
+                onClick={() => setSurveyIndex(1)}
+              >
                 Comportamento
               </S.SurveyNavButton>
             </li>
-            <li
-              
-            >
-              <S.SurveyNavButton style={{fontWeight: surveyIndex == 2 ? "bold" : "normal"}} onClick={() => setSurveyIndex(2)}>
+            <li>
+              <S.SurveyNavButton
+                style={
+                  surveyIndex === 2
+                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
+                    : {}
+                }
+                onClick={() => setSurveyIndex(2)}
+              >
                 Habilidades sociais...
               </S.SurveyNavButton>
             </li>

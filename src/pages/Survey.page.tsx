@@ -24,7 +24,7 @@ function Home() {
         {/*  Site header */}
         <Header/>
 
-        {model && <SurveyComponent survey={model} surveyIndex={surveyIndex} />}
+        {model && <SurveyComponent survey={model} surveyIndex={surveyIndex} setSurveyIndex={setSurveyIndex}/>}
       </div>
     </div>
   );

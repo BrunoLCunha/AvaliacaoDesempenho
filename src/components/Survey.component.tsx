@@ -8,7 +8,8 @@ Survey.StylesManager.applyTheme("modern");
 
 export interface ISurveyComponent {
   survey: Survey.ReactSurveyModel,
-  surveyIndex: number
+  surveyIndex: number,
+  setSurveyIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
 function SurveyComponent(props: ISurveyComponent) {
@@ -16,6 +17,11 @@ function SurveyComponent(props: ISurveyComponent) {
     //Write survey results into database
     console.log("Survey results: " + JSON.stringify(survey.data));
   };
+
+  const onCurrentPageChanged = (survey: any) => {
+    console.log(survey);
+    props.setSurveyIndex(survey.currentPageNo);
+  }
 
   const saveSurveyToPdf = (
     json: JSON,
@@ -45,6 +51,7 @@ function SurveyComponent(props: ISurveyComponent) {
 
   return (
     <Survey.Survey
+      onCurrentPageChanged={onCurrentPageChanged}
       model={props.survey}
       onComplete={onComplete}
     />
