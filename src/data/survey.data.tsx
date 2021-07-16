@@ -150,7 +150,7 @@ export const surveyJSON = {
           type: "rating",
           name: "aprendizado",
           title:
-            "10. Após executar uma tarefa nova, quão bem seu funcionário demonstra ter aprendido algo com ela?",
+            "9. Após executar uma tarefa nova, quão bem seu funcionário demonstra ter aprendido algo com ela?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -166,7 +166,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "erros",
-          title: "11. Quão bem seu funcionário lida com erros cometidos por ele?",
+          title: "10. Quão bem seu funcionário lida com erros cometidos por ele?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -181,7 +181,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "resultados",
-          title: "12. Quão mascarados são os resultados do seu funcionário?",
+          title: "11. Quão mascarados são os resultados do seu funcionário?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -197,7 +197,7 @@ export const surveyJSON = {
           type: "rating",
           name: "fofocas",
           title:
-            "13. Quanto a fofocas no ambiente de trabalho, quão informado seu funcionário se mantém?",
+            "12. Quanto a fofocas no ambiente de trabalho, quão informado seu funcionário se mantém?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -219,7 +219,7 @@ export const surveyJSON = {
           type: "rating",
           name: "discussao",
           title:
-            "14. Quão propenso a se envolver em discussões é seu funcionário?",
+            "13. Quão propenso a se envolver em discussões é seu funcionário?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -235,7 +235,7 @@ export const surveyJSON = {
           type: "rating",
           name: "discussao2",
           title:
-            "15. Seu funcionário se envolve em muitas discussões que não o envolvem?",
+            "14. Seu funcionário se envolve em muitas discussões que não o envolvem?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -252,7 +252,7 @@ export const surveyJSON = {
           type: "rating",
           name: "comunicacao",
           title:
-            "16. Quão bem seu funcionário se comunica com outros colaboradores?",
+            "15. Quão bem seu funcionário se comunica com outros colaboradores?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -268,7 +268,7 @@ export const surveyJSON = {
           type: "rating",
           name: "educacao",
           title:
-            "17. Quão respeitoso seu funcionário se mostra em sua comunicação verbal e não verbal?",
+            "16. Quão respeitoso seu funcionário se mostra em sua comunicação verbal e não verbal?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -284,7 +284,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "feedback",
-          title: "18. Seu funcionário está disposto a receber feedbacks?",
+          title: "17. Seu funcionário está disposto a receber feedbacks?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -299,7 +299,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "feedbackruim",
-          title: "20. Quão bem seu funcionário reage a um feedback negativo?",
+          title: "18. Quão bem seu funcionário reage a um feedback negativo?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -316,7 +316,7 @@ export const surveyJSON = {
           type: "rating",
           name: "ajuda",
           title:
-            "21. Seu funcionário auxilia outros colaboradores quando necessário?",
+            "19. Seu funcionário auxilia outros colaboradores quando necessário?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -331,7 +331,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "proatividade",
-          title: "22. Quão propenso a expressar suas ideias é seu funcionário?",
+          title: "20. Quão propenso a expressar suas ideias é seu funcionário?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -348,7 +348,7 @@ export const surveyJSON = {
           type: "rating",
           name: "discurso",
           title:
-            "23. Seu funcionário tem dificuldade de lidar com pessoas diferentes dele (etnia, religião, orientação sexual, cargo)?",
+            "21. Seu funcionário tem dificuldade de lidar com pessoas diferentes dele (etnia, religião, orientação sexual, cargo)?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -365,7 +365,7 @@ export const surveyJSON = {
           type: "rating",
           name: "colaboracao",
           title:
-            "24. Quão bem seu funcionário consegue manter os colegas de equipe atualizados?",
+            "22. Quão bem seu funcionário consegue manter os colegas de equipe atualizados?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -381,7 +381,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "relacionamento",
-          title: "25. Quão bem seu funcionário se relaciona com sua equipe?",
+          title: "23. Quão bem seu funcionário se relaciona com sua equipe?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -398,7 +398,7 @@ export const surveyJSON = {
           type: "rating",
           name: "visao",
           title:
-            "26. Seu funcionário segue as normas, diretrizes e visões da empresa?",
+            "24. Seu funcionário segue as normas, diretrizes e visões da empresa?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
