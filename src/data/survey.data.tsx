@@ -150,7 +150,7 @@ export const surveyJSON = {
           type: "rating",
           name: "aprendizado",
           title:
-            "9. Após executar uma tarefa nova, quão bem seu funcionário demonstra ter aprendido algo com ela?",
+            "9. Após executar uma nova tarefa, quão bem seu funcionário demonstra ter aprendido algo com ela?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -166,7 +166,7 @@ export const surveyJSON = {
         {
           type: "rating",
           name: "erros",
-          title: "10. Quão bem seu funcionário lida com erros cometidos por ele?",
+          title: "10. Quão bem seu funcionário lida com seus prórpios erros?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -179,9 +179,9 @@ export const surveyJSON = {
           isRequired: false,
         },
         {
-          type: "rating",
+          type: "boolean",
           name: "resultados",
-          title: "11. Quão mascarados são os resultados do seu funcionário?",
+          title: "11. Seu funcionário altera seus próprios resultados?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -194,10 +194,10 @@ export const surveyJSON = {
           isRequired: false,
         },
         {
-          type: "rating",
+          type: "boolean",
           name: "fofocas",
           title:
-            "12. Quanto a fofocas no ambiente de trabalho, quão informado seu funcionário se mantém?",
+            "12. Seu funcionário participa de fofocas no ambiente de trabalho?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -205,7 +205,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional11",
+          name: "opcional12",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -227,15 +227,15 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional12",
+          name: "opcional13",
           title: "Comentários adicionais:",
           isRequired: false,
         },
         {
-          type: "rating",
+          type: "boolean",
           name: "discussao2",
           title:
-            "14. Seu funcionário se envolve em muitas discussões que não o envolvem?",
+            "14. Seu funcionário se envolve em discussões que não o dizem respeito?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -243,7 +243,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional13",
+          name: "opcional14",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -260,7 +260,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional14",
+          name: "opcional15",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -276,13 +276,13 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional15",
+          name: "opcional16",
           title: "Comentários adicionais:",
           isRequired: false,
         },
         //sim ou não
         {
-          type: "rating",
+          type: "boolean",
           name: "feedback",
           title: "17. Seu funcionário está disposto a receber feedbacks?",
           isRequired: true,
@@ -292,7 +292,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional16",
+          name: "opcional17",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -307,16 +307,16 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional17",
+          name: "opcional18",
           title: "Comentários adicionais:",
           isRequired: false,
         },
         //proatividade sim ou não
         {
-          type: "rating",
+          type: "boolean",
           name: "ajuda",
           title:
-            "19. Seu funcionário auxilia outros colaboradores quando necessário?",
+            "19. Seu funcionário auxilia outros colaboradores?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -324,7 +324,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional18",
+          name: "opcional19",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -339,13 +339,13 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional19",
+          name: "opcional20",
           title: "Comentários adicionais:",
           isRequired: false,
         },
         //relacionamento interpessoal   MUDAR "RATING" PARA PERGUNTA DE SIM OU NÃO
         {
-          type: "rating",
+          type: "boolean",
           name: "discurso",
           title:
             "21. Seu funcionário tem dificuldade de lidar com pessoas diferentes dele (etnia, religião, orientação sexual, cargo)?",
@@ -356,7 +356,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional20",
+          name: "opcional21",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -365,7 +365,7 @@ export const surveyJSON = {
           type: "rating",
           name: "colaboracao",
           title:
-            "22. Quão bem seu funcionário consegue manter os colegas de equipe atualizados?",
+            "22. Quão bem seu funcionário mantém seus colegas de equipe atualizados sobre suas atividades?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -373,7 +373,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional21",
+          name: "opcional22",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -389,7 +389,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional22",
+          name: "opcional23",
           title: "Comentários adicionais:",
           isRequired: false,
         },
@@ -398,7 +398,7 @@ export const surveyJSON = {
           type: "rating",
           name: "visao",
           title:
-            "24. Seu funcionário segue as normas, diretrizes e visões da empresa?",
+            "24. Quão bem seu funcionário segue as normas, diretrizes e visões da empresa?",
           isRequired: true,
           rateValues: values,
           maxRateDescription: maxRate,
@@ -406,7 +406,7 @@ export const surveyJSON = {
         },
         {
           type: "text",
-          name: "opcional23",
+          name: "opcional24",
           title: "Comentários adicionais:",
           isRequired: false,
         },
