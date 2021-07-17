@@ -1,32 +1,60 @@
 import React, { useState } from "react";
 import Header from "../components/Header.component";
+import * as S from "./Home.styles";
+import Input from "../components/Input";
 
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
 
 function Home() {
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
+
+  const validateUser = () => {
+    if (password === "123456" && user === "admin") {
+      setIsInvalid(false);
+      window.open("/avaliacao", "_self");
+      return;
+    }
+
+    setIsInvalid(true);
+  };
+
   return (
-    <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      {/* <Sidebar setSurveyIndex={setSurveyIndex} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
-
-      {/* Content area */}
-      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-        {/*  Site header */}
-
-        <main>
-          {/* content */}
-          <Container style={{ textAlign: "center" }}>
-            <Button
-              variant="success"
-              href="/avaliacao"
-              style={{ position: "absolute", top: "50%" }}
-            >
-              Iniciar a Avaliação
-            </Button>
-          </Container>
-        </main>
-      </div>
+    <div
+      className="flex h-screen overflow-hidden"
+      style={{ backgroundColor: "#29313C" }}
+    >
+      <S.HomeContainer id="wrapper">
+        <S.Center>
+          <S.Title>Bem-vindo(a) ao Performance Portal</S.Title>
+          <S.LoginBox>
+            {isInvalid && (
+              <S.IncorrectCredentials>
+                Credenciais incorretas, tente novamente.
+              </S.IncorrectCredentials>
+            )}
+            <Input
+              label="Usuário"
+              onChange={setUser}
+              value={user}
+              type="text"
+            ></Input>
+            <Input
+              type="password"
+              label="Senha"
+              onChange={setPassword}
+              value={password}
+            ></Input>
+          </S.LoginBox>
+          <S.ButtonContainer>
+            <S.Button onClick={() => validateUser()}>ENTRAR</S.Button>
+            <S.ButtonLink onClick={() => undefined}>
+              Esqueci a senha
+            </S.ButtonLink>
+          </S.ButtonContainer>
+        </S.Center>
+      </S.HomeContainer>
     </div>
   );
 }
