@@ -8,10 +8,16 @@ import Button from "react-bootstrap/Button";
 function Home() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
 
   const validateUser = () => {
-    if (password === "123456" && user === "admin")
+    if (password === "123456" && user === "admin") {
+      setIsInvalid(false);
       window.open("/avaliacao", "_self");
+      return;
+    }
+
+    setIsInvalid(true);
   };
 
   return (
@@ -23,6 +29,11 @@ function Home() {
         <S.Center>
           <S.Title>Bem-vindo(a) ao Performance Portal</S.Title>
           <S.LoginBox>
+            {isInvalid && (
+              <S.IncorrectCredentials>
+                Credenciais incorretas, tente novamente.
+              </S.IncorrectCredentials>
+            )}
             <Input
               label="Usuário"
               onChange={setUser}

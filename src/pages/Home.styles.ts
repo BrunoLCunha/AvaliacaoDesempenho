@@ -63,3 +63,9 @@ export const ButtonLink = styled.button`
   padding: 10px 22px;
   font-size: 13px;
 `;
+
+export const IncorrectCredentials = styled.div`
+  background-color: #ad2d2d;
+  color: white;
+  padding 12px 22px;
+`;
