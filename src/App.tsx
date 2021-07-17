@@ -8,7 +8,9 @@ import "./assets/css/default.css";
 // Import pages
 import Home from "./pages/Home.page";
 import Survey from "./pages/Survey.page";
+
 import Dashboard from "./pages/dashboard/dashboard.component";
+
 
 function App() {
   const location = useLocation();
