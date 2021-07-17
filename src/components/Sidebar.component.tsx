@@ -3,9 +3,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import * as S from "./Sidebar.styles";
 
 export interface ISidebar {
-  setSurveyIndex: React.Dispatch<React.SetStateAction<number>>;
+  setSurveyIndex?: React.Dispatch<React.SetStateAction<number>>;
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  surveyIndex: number;
+  surveyIndex?: number;
   sidebarOpen: boolean;
 }
 
@@ -24,11 +24,12 @@ function Sidebar(props: ISidebar) {
     const clickHandler = ({ target }) => {
       if (!sidebar.current || !trigger.current) return;
       // @ts-ignore
-      if (!sidebarOpen || sidebar.current.contains(target) || trigger.current.contains(target)) return;
+      if (!sidebarOpen ||sidebar.current.contains(target) ||trigger.current.contains(target))
+        return;
       setSidebarOpen(false);
     };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
   });
 
   // close if the esc key is pressed
@@ -38,23 +39,27 @@ function Sidebar(props: ISidebar) {
       if (!sidebarOpen || keyCode !== 27) return;
       setSidebarOpen(false);
     };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
   });
 
   return (
     <div className="lg:w-64">
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
+          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         aria-hidden="true"
       ></div>
 
       {/* Sidebar */}
       <div
-        style={{ backgroundColor: "white" }}
+        style={{ backgroundColor: "#29313C" }}
         id="sidebar"
-        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-green-900 p-4 transition-transform duration-200 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-64'}`}
+        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-green-900 p-4 transition-transform duration-200 ease-in-out ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-64"
+        }`}
       >
         {/* Sidebar header */}
         <div className="flex justify-between mb-10 pr-3 sm:px-2">
@@ -117,7 +122,7 @@ function Sidebar(props: ISidebar) {
               </svg>
               <h1
                 className="text-2xl uppercase font-semibold pl-3"
-                style={{ color: "#6b6b6b", verticalAlign: "middle" }}
+                style={{ color: "white", verticalAlign: "middle" }}
               >
                 Avaliador
               </h1>
@@ -128,16 +133,16 @@ function Sidebar(props: ISidebar) {
         {/* Links */}
         <div>
           <ul className="mt-3">
-            {/* <li
+            <li
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                page === "" && "bg-gray-900"
+                page === "dashboard" && "bg-gray-900"
               }`}
             >
               <NavLink
                 exact
-                to="/"
+                to="/dashboard"
                 className={`block text-gray-200 hover:text-white transition duration-150 ${
-                  page === "" && "hover:text-gray-200"
+                  page === "dashboard" && "hover:text-gray-200"
                 }`}
               >
                 <div className="flex flex-grow">
@@ -147,7 +152,7 @@ function Sidebar(props: ISidebar) {
                   >
                     <circle
                       className={`fill-current text-gray-900 ${
-                        page === "" && "text-green-400"
+                        page === "dashboard" && "text-green-400"
                       }`}
                       cx="18.5"
                       cy="5.5"
@@ -155,7 +160,7 @@ function Sidebar(props: ISidebar) {
                     />
                     <circle
                       className={`fill-current text-gray-800 ${
-                        page === "" && "text-green-600"
+                        page === "dashboard" && "text-green-600"
                       }`}
                       cx="5.5"
                       cy="5.5"
@@ -163,7 +168,7 @@ function Sidebar(props: ISidebar) {
                     />
                     <circle
                       className={`fill-current text-gray-800 ${
-                        page === "" && "text-green-600"
+                        page === "dashboard" && "text-green-600"
                       }`}
                       cx="18.5"
                       cy="18.5"
@@ -171,22 +176,24 @@ function Sidebar(props: ISidebar) {
                     />
                     <circle
                       className={`fill-current text-gray-900 ${
-                        page === "" && "text-green-400"
+                        page === "dashboard" && "text-green-400"
                       }`}
                       cx="5.5"
                       cy="18.5"
                       r="4.5"
                     />
                   </svg>
-                  <span className="text-sm font-medium">Início</span>
+                  <span className="text-sm font-medium">Dashboard</span>
                 </div>
               </NavLink>
-            </li> */}
+            </li> 
+            {setSurveyIndex && <>
             <li
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
                 page === "avaliacao" && "bg-gray-900"
               }`}
             >
+              
               <NavLink
                 exact
                 to="/avaliacao"
@@ -226,7 +233,11 @@ function Sidebar(props: ISidebar) {
               <S.SurveyNavButton
                 style={
                   surveyIndex === 0
-                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
+                    ? {
+                        fontWeight: "bolder",
+                        backgroundColor: "#c9c9c9",
+                        color: "black",
+                      }
                     : {}
                 }
                 onClick={() => setSurveyIndex(0)}
@@ -238,7 +249,11 @@ function Sidebar(props: ISidebar) {
               <S.SurveyNavButton
                 style={
                   surveyIndex === 1
-                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
+                    ? {
+                        fontWeight: "bolder",
+                        backgroundColor: "#c9c9c9",
+                        color: "black",
+                      }
                     : {}
                 }
                 onClick={() => setSurveyIndex(1)}
@@ -250,14 +265,18 @@ function Sidebar(props: ISidebar) {
               <S.SurveyNavButton
                 style={
                   surveyIndex === 2
-                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
+                    ? {
+                        fontWeight: "bolder",
+                        backgroundColor: "#c9c9c9",
+                        color: "black",
+                      }
                     : {}
                 }
                 onClick={() => setSurveyIndex(2)}
               >
                 Habilidades sociais...
               </S.SurveyNavButton>
-            </li>
+            </li></>}
           </ul>
         </div>
       </div>

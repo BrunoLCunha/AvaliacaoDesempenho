@@ -8,6 +8,7 @@ import "./assets/css/default.css";
 // Import pages
 import Home from "./pages/Home.page";
 import Survey from "./pages/Survey.page";
+import Dashboard from "./pages/dashboard/dashboard.component";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route exact path="/avaliacao">
           <Survey />
+        </Route>
+        <Route exact path="/dashboard">
+          <Dashboard />
         </Route>
       </Switch>
     </>
