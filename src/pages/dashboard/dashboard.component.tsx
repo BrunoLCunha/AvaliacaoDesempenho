@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { SelectPicker } from 'rsuite';
 import Sidebar from "../../components/Sidebar.component";
 import Header from "../../components/Header.component";
-//import data from "https://github.com/rsuite/rsuite/blob/master/docs/public/data/users-role.json"
 
+
+//import data from "https://github.com/rsuite/rsuite/blob/master/docs/public/data/users-role.json"
 const names = ["Alesandro Nunes Garcia",
                 "Alicia Bingre Álvares",
                 "Bruna Ataíde Moutinho",
