@@ -1,6 +1,36 @@
 const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const maxRate = "Muito";
 const minRate = "Pouco";
+/*
+var funcionario = {
+  questions: [
+    {
+      type: "dropdown",
+        name: "funcionário",
+        title: "Selecionar o funcionário avaliado",
+        isRequired: true,
+        colCount: 0,
+        choices: [
+          "Alesandro Nunes Garcia",
+          "Alicia Bingre Álvares",
+          "Bruna Ataíde Moutinho",
+          "Elisa Loio Castanheda",
+          "Jacira Tavares Lamenha",
+          "Jadson Abrantes Abelho",
+          "João Felipe Moraes",
+          "Luciana Aparecida da Silva",
+          "Melany Simas Quinta",
+          "Patrício Machado Anhaia",
+          "Pietro Sanches Mourão",
+          "Sancho Quintais Amoedo",
+          "Simone Morgado Valadim",
+          "Valdir Gimenez Carvalho",
+          "Waldomiro Ribeiro dos Santos"
+        ]
+    }
+  ]
+};
+*/
 
 export const surveyJSON = {
   elements: [1],
@@ -16,30 +46,6 @@ export const surveyJSON = {
       navigationTitle: "Desempenho",
       //title: "Eficácia",
       questions: [
-        {
-          type: "dropdown",
-            name: "funcionário",
-            title: "Selecionar o funcionário avaliado",
-            isRequired: true,
-            colCount: 0,
-            choices: [
-              "Alesandro Nunes Garcia",
-              "Alicia Bingre Álvares",
-              "Bruna Ataíde Moutinho",
-              "Elisa Loio Castanheda",
-              "Jacira Tavares Lamenha",
-              "Jadson Abrantes Abelho",
-              "João Felipe Moraes",
-              "Luciana Aparecida da Silva",
-              "Melany Simas Quinta",
-              "Patrício Machado Anhaia",
-              "Pietro Sanches Mourão",
-              "Sancho Quintais Amoedo",
-              "Simone Morgado Valadim",
-              "Valdir Gimenez Carvalho",
-              "Waldomiro Ribeiro dos Santos"
-            ]
-        },
         {
           type: "rating",
           name: "eficaz",
