@@ -18,14 +18,25 @@ function Home() {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
-      <Sidebar setSurveyIndex={setSurveyIndex} surveyIndex={surveyIndex} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
+      <Sidebar
+        setSurveyIndex={setSurveyIndex}
+        surveyIndex={surveyIndex}
+        setSidebarOpen={setSidebarOpen}
+        sidebarOpen={sidebarOpen}
+      />
 
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
         {/*  Site header */}
-        <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen}/>
+        <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
 
-        {model && <SurveyComponent survey={model} surveyIndex={surveyIndex} setSurveyIndex={setSurveyIndex}/>}
+        {model && (
+          <SurveyComponent
+            survey={model}
+            surveyIndex={surveyIndex}
+            setSurveyIndex={setSurveyIndex}
+          />
+        )}
       </div>
     </div>
   );
