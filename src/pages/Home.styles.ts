@@ -29,16 +29,8 @@ export const LoginBox = styled.div`
   border: 0;
 `;
 
-export const Input = styled.input`
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: white;
-  background-color: transparent;
-  height: 42px;
-`;
-
 export const Button = styled.button`
-  border: solid 2px white;
+  border: solid 1px white;
   color: white;
   letter-spacing: 2px;
   border-radius: 10px;
