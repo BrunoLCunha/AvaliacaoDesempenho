@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { Nav } from "rsuite";
 import * as S from "./Sidebar.styles";
 
+const IconsPrimaryColor= "white";
+const IconsSecondaryColor="grey";
+
 export interface ISidebar {
-  setSurveyIndex: React.Dispatch<React.SetStateAction<number>>;
+  setSurveyIndex?: React.Dispatch<React.SetStateAction<number>>;
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  surveyIndex: number;
+  surveyIndex?: number;
   sidebarOpen: boolean;
 }
 
@@ -24,11 +28,12 @@ function Sidebar(props: ISidebar) {
     const clickHandler = ({ target }) => {
       if (!sidebar.current || !trigger.current) return;
       // @ts-ignore
-      if (!sidebarOpen || sidebar.current.contains(target) || trigger.current.contains(target)) return;
+      if (!sidebarOpen ||sidebar.current.contains(target) ||trigger.current.contains(target))
+        return;
       setSidebarOpen(false);
     };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
   });
 
   // close if the esc key is pressed
@@ -38,23 +43,27 @@ function Sidebar(props: ISidebar) {
       if (!sidebarOpen || keyCode !== 27) return;
       setSidebarOpen(false);
     };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
   });
 
   return (
     <div className="lg:w-64">
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
+          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         aria-hidden="true"
       ></div>
 
       {/* Sidebar */}
       <div
-        style={{ backgroundColor: "white" }}
+        style={{ backgroundColor: "#29313C" }}
         id="sidebar"
-        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-green-900 p-4 transition-transform duration-200 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-64'}`}
+        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-green-900 p-4 transition-transform duration-200 ease-in-out ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-64"
+        }`}
       >
         {/* Sidebar header */}
         <div className="flex justify-between mb-10 pr-3 sm:px-2">
@@ -78,48 +87,11 @@ function Sidebar(props: ISidebar) {
           {/* Logo */}
           <NavLink exact to="/" className="block">
             <div className="flex flex-grow">
-              <svg width="32" height="32" viewBox="0 0 32 32">
-                <defs>
-                  <linearGradient
-                    x1="28.538%"
-                    y1="20.229%"
-                    x2="100%"
-                    y2="108.156%"
-                    id="logo-a"
-                  >
-                    <stop stopColor="#005e4a" stopOpacity="0" offset="0%" />
-                    <stop stopColor="#005e4a" offset="100%" />
-                  </linearGradient>
-                  <linearGradient
-                    x1="88.638%"
-                    y1="29.267%"
-                    x2="22.42%"
-                    y2="100%"
-                    id="logo-b"
-                  >
-                    <stop stopColor="#5effdc" stopOpacity="0" offset="0%" />
-                    <stop stopColor="#5effdc" offset="100%" />
-                  </linearGradient>
-                </defs>
-                <rect fill="#047857" width="32" height="32" rx="16" />
-                <path
-                  d="M18.277.16C26.035 1.267 32 7.938 32 16c0 8.837-7.163 16-16 16a15.937 15.937 0 01-10.426-3.863L18.277.161z"
-                  fill="#02d3a6"
-                />
-                <path
-                  d="M7.404 2.503l18.339 26.19A15.93 15.93 0 0116 32C7.163 32 0 24.837 0 16 0 10.327 2.952 5.344 7.404 2.503z"
-                  fill="url(#logo-a)"
-                />
-                <path
-                  d="M2.223 24.14L29.777 7.86A15.926 15.926 0 0132 16c0 8.837-7.163 16-16 16-5.864 0-10.991-3.154-13.777-7.86z"
-                  fill="url(#logo-b)"
-                />
-              </svg>
               <h1
-                className="text-2xl uppercase font-semibold pl-3"
-                style={{ color: "#6b6b6b", verticalAlign: "middle" }}
+                className="text-2xl"
+                style={{ color: "white", verticalAlign: "middle" }}
               >
-                Avaliador
+                Performance Portal
               </h1>
             </div>
           </NavLink>
@@ -128,16 +100,17 @@ function Sidebar(props: ISidebar) {
         {/* Links */}
         <div>
           <ul className="mt-3">
-            {/* <li
+            <li
+              style={page === "dashboard" ? {backgroundColor: "#1675e0"} : {}}
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                page === "" && "bg-gray-900"
+                page === "dashboard" && "bg-gray-900"
               }`}
             >
               <NavLink
                 exact
-                to="/"
+                to="/dashboard"
                 className={`block text-gray-200 hover:text-white transition duration-150 ${
-                  page === "" && "hover:text-gray-200"
+                  page === "dashboard" && "hover:text-gray-200"
                 }`}
               >
                 <div className="flex flex-grow">
@@ -146,47 +119,54 @@ function Sidebar(props: ISidebar) {
                     viewBox="0 0 24 24"
                   >
                     <circle
+                      style={page === "dashboard" ? {color: IconsPrimaryColor} : {}}
                       className={`fill-current text-gray-900 ${
-                        page === "" && "text-green-400"
+                        page === "dashboard" && "text-green-400"
                       }`}
                       cx="18.5"
                       cy="5.5"
                       r="4.5"
                     />
                     <circle
+                      style={page === "dashboard" ? {color: IconsSecondaryColor} : {}}
                       className={`fill-current text-gray-800 ${
-                        page === "" && "text-green-600"
+                        page === "dashboard" && "text-green-600"
                       }`}
                       cx="5.5"
                       cy="5.5"
                       r="4.5"
                     />
                     <circle
+                      style={page === "dashboard" ? {color: IconsSecondaryColor} : {}}
                       className={`fill-current text-gray-800 ${
-                        page === "" && "text-green-600"
+                        page === "dashboard" && "text-green-600"
                       }`}
                       cx="18.5"
                       cy="18.5"
                       r="4.5"
                     />
                     <circle
+                      style={page === "dashboard" ? {color: IconsPrimaryColor} : {}}
                       className={`fill-current text-gray-900 ${
-                        page === "" && "text-green-400"
+                        page === "dashboard" && "text-green-400"
                       }`}
                       cx="5.5"
                       cy="18.5"
                       r="4.5"
                     />
                   </svg>
-                  <span className="text-sm font-medium">Início</span>
+                  <span className="text-sm font-medium">Dashboard</span>
                 </div>
               </NavLink>
-            </li> */}
+            </li> 
+            {setSurveyIndex && <>
             <li
+              style={page === "avaliacao" ? {backgroundColor: "#1675e0"} : {}}
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
                 page === "avaliacao" && "bg-gray-900"
               }`}
             >
+              
               <NavLink
                 exact
                 to="/avaliacao"
@@ -206,12 +186,14 @@ function Sidebar(props: ISidebar) {
                       d="M8 1v2H3v19h18V3h-5V1h7v23H1V1z"
                     />
                     <path
+                      style={page === "avaliacao" ? {color: IconsPrimaryColor} : {}}
                       className={`fill-current text-gray-800 ${
                         page === "avaliacao" && "text-green-600"
                       }`}
                       d="M1 1h22v23H1z"
                     />
                     <path
+                    style={page === "avaliacao" ? {color: IconsSecondaryColor} : {}}
                       className={`fill-current text-gray-600 ${
                         page === "avaliacao" && "text-green-400"
                       }`}
@@ -223,41 +205,20 @@ function Sidebar(props: ISidebar) {
               </NavLink>
             </li>
             <li>
-              <S.SurveyNavButton
-                style={
-                  surveyIndex === 0
-                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
-                    : {}
-                }
-                onClick={() => setSurveyIndex(0)}
-              >
+              <S.CustomNav vertical appearance="subtle" reversed activeKey={surveyIndex} onSelect={setSurveyIndex}>
+                <Nav.Item eventKey={0}>
                 Desempenho
-              </S.SurveyNavButton>
-            </li>
-            <li>
-              <S.SurveyNavButton
-                style={
-                  surveyIndex === 1
-                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
-                    : {}
-                }
-                onClick={() => setSurveyIndex(1)}
-              >
+                </Nav.Item>
+                <Nav.Item eventKey={1}>
                 Comportamento
-              </S.SurveyNavButton>
+                </Nav.Item>
+                <Nav.Item eventKey={2}>
+                  Habilidades sociais...
+                </Nav.Item>
+                
+              </S.CustomNav>
             </li>
-            <li>
-              <S.SurveyNavButton
-                style={
-                  surveyIndex === 2
-                    ? { fontWeight: "bolder", backgroundColor: "#c9c9c9", color: "black" }
-                    : {}
-                }
-                onClick={() => setSurveyIndex(2)}
-              >
-                Habilidades sociais...
-              </S.SurveyNavButton>
-            </li>
+            </>}
           </ul>
         </div>
       </div>
