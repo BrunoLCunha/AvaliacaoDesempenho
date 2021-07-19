@@ -1,14 +1,12 @@
 import styled from "styled-components";
+import { Nav } from "rsuite";
 
-export const SurveyNavButton = styled.label `
-  color: #6b6b6b;
-  background-color: transparent;
-  padding: 10px;
-  width: 100%;
-  font-size: 13px;
-  text-align: left;
+export const CustomNav = styled(Nav)`
+  ul .rs-nav-item:not(.rs-nav-item-active) a {
+    color: white !important;
+  }
 
-  :hover {
-    background-color: #e3e3e3;
+  ul .rs-nav-item.rs-nav-item-active a {
+    color: #66aeff !important;
   }
 `;

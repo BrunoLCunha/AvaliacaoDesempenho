@@ -4,10 +4,12 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import "./css/style.scss";
 import "./css/bootstrap.min.css";
 import "./assets/css/default.css";
+import 'rsuite/dist/styles/rsuite-default.css';
 
 // Import pages
 import Home from "./pages/Home.page";
 import Survey from "./pages/Survey.page";
+import Dashboard from "./pages/dashboard/dashboard.component";
 
 function App() {
   const location = useLocation();
@@ -28,6 +30,9 @@ function App() {
         </Route>
         <Route exact path="/avaliacao">
           <Survey />
+        </Route>
+        <Route exact path="/dashboard">
+          <Dashboard />
         </Route>
       </Switch>
     </>
