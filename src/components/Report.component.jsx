@@ -57,11 +57,30 @@ class Report extends Component {
   render() {
     const dat = this.props.survey.data;
     const survey = JSON.parse(JSON.stringify(this.props.survey));
-
+    let avaliador = "Fulano";
+    let avaliado = "Funcionario";
     let surveyinfo = {};
     let mean = {}
     let means = <div></div>;
     let questions = <div></div>;
+    let avaliacao = 
+    {
+      "Desempenho": 
+      {
+        "bom": "Seu funcionário traz resultados de forma consistente.",
+        "ruim": "Seu funcionário precisa de orientação para melhorar seus resultados"
+      },
+      "Comportamento":
+      {
+        "bom": "Seu funcionário se comporta de maneira profissional no ambiente de trabalho.",
+        "ruim": "Seu funcionário precisa de moderação ao se expressar e seus resultados devem ser verificados."
+      },
+      "Habilidades sociais/pessoais":
+      {
+        "bom": "Seu funcionário se relaciona de forma saudável com seus colegas.",
+        "ruim": "Seu funcionário pode ser um pouco precipitado ao se comunicar com seus colegas causando desentendimentos."
+      }
+    };
 
     if (this.state.loading <= 1)
     {
@@ -96,25 +115,45 @@ class Report extends Component {
       }
 
       means = (
-        <div style={{ 
-          marginTop: "50px",
-          marginBottom: "20px",
-          width: "210mm",
+      <div style={{ 
+        marginTop: "50px",
+        marginBottom: "20px",
+        width: "210mm",
+        marginLeft: "auto",
+        marginRight: "auto"
+      }}>
+      <Row className="justify-content-md-center" style={{marginBottom: "10px"}}>
+        <Col md="auto"><h2><b>Performance Report</b></h2></Col>
+      </Row>
+
+      <Row style={{ 
+          marginTop: "10px",
+          marginBottom: "10px",
+          width: "190mm",
           marginLeft: "auto",
           marginRight: "auto"
       }}>
-        <Row className="justify-content-md-center" style={{marginBottom: "10px"}}>
-          <h2><b>Report</b></h2>
-        </Row>
-        <Row style={{ 
-            marginTop: "20px",
-            marginBottom: "20px",
-            width: "190mm",
-            marginLeft: "auto",
-            marginRight: "auto"
-        }}>
+        <b><h5>Avaliador: {avaliador}</h5></b>
+      </Row>
+      <Row style={{ 
+          marginTop: "10px",
+          marginBottom: "10px",
+          width: "190mm",
+          marginLeft: "auto",
+          marginRight: "auto"
+      }}>
+        <b><h5>Avaliado: {avaliado}</h5></b>
+      </Row>
+      <Row style={{ 
+          marginTop: "30px",
+          marginBottom: "20px",
+          width: "190mm",
+          marginLeft: "auto",
+          marginRight: "auto"
+      }}>
+
         <Row style={{marginBottom: "30px"}}>
-          <h4>Média por Categoria</h4>
+          <Col md="auto"><h4>Média por Categoria</h4></Col>
         </Row>
         <Table striped bordered hover style={{ 
             marginTop: "20px",
@@ -139,8 +178,16 @@ class Report extends Component {
             ))}
           </tbody>
         </Table>
+        <Row style={{marginBottom: "10px", marginTop: "30px"}}>
+          <Col md="auto"><h4>Comentários Gerais</h4></Col>
         </Row>
-        </div>
+        <Row>
+          <Col style={{marginBottom: "10px"}} md="auto"><p>Desempenho: {mean['Desempenho'] >= 5 ? (<div>{avaliacao['Desempenho']['bom']}</div>) : (<div>{avaliacao['Desempenho']['ruim']}</div>)}</p></Col>
+          <Col style={{marginBottom: "10px"}} md="auto"><p>Comportamento: {mean['Comportamento'] >= 5 ? (<div>{avaliacao['Comportamento']['bom']}</div>) : (<div>{avaliacao['Comportamento']['ruim']}</div>)}</p></Col>
+          <Col style={{marginBottom: "10px"}} md="auto"><p>Habilidades sociais/pessoais: {mean['Habilidades sociais/pessoais'] >= 5 ? (<div>{avaliacao['Habilidades sociais/pessoais']['bom']}</div>) : (<div>{avaliacao['Habilidades sociais/pessoais']['ruim']}</div>)}</p></Col>
+        </Row>
+      </Row>
+      </div>
       )
 
       questions = Object.keys(surveyinfo).map((page, index) => (
@@ -153,7 +200,7 @@ class Report extends Component {
         }}>
         {index === 0 && (
         <Row className="justify-content-md-center" style={{marginBottom: "10px"}}>
-          <h3>Respostas</h3>
+          <Col md="auto"><h3>Respostas</h3></Col>
         </Row>)}
         <Row style={{ 
             marginTop: "20px",
@@ -164,11 +211,11 @@ class Report extends Component {
         }}>
         {index === 0 ? ( 
         <Row style={{marginBottom: "30px"}}>
-          <h4>{page}</h4>
+          <Col md="auto"><h4>{page}</h4></Col>
         </Row>) :
         (
         <Row style={{marginBottom: "30px", marginTop: "50px"}}>
-          <h4>{page}</h4>
+          <Col md="auto"><h4>{page}</h4></Col>
         </Row>
         )}
         <Table className="justify-content-md-center" striped bordered hover style={{ 
@@ -201,6 +248,8 @@ class Report extends Component {
         </Row>
       </div>
       ));
+    console.log(surveyinfo)
+
     }
 
     return (
@@ -241,13 +290,13 @@ class Report extends Component {
             </Col>
           </Row>
           )}
-          <Row className="justify-content-md-center">           
-                <Row id="page1" className="justify-content-md-center" style={{marginBottom: "10px"}}>
-                  <Col>{means}</Col>
-                </Row>
-                <Row className="justify-content-md-center" style={{marginBottom: "10px"}}>
-                  <Col>{questions}</Col>
-                </Row>
+          <Row className="justify-content-md-center">         
+            <Row id="page1" className="justify-content-md-center" style={{marginBottom: "10px"}}>
+              <Col>{means}</Col>
+            </Row>
+            <Row className="justify-content-md-center" style={{marginBottom: "10px"}}>
+              <Col>{questions}</Col>
+            </Row>
           </Row>
           </div>)}
         </Container>
