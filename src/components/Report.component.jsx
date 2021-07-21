@@ -32,18 +32,7 @@ class Report extends Component {
     let tabs = [page1, page2, page3, page4]
 
     var pdf = new jsPDF("p", "mm", "a4");
-    //create first image
-    /*
-    tabs.forEach(page => {
-      page.style.width = "210mm";
-      page.style.minHeight = "297mm";
-      page.style.marginLeft = "auto";
-      page.style.marginRight = "auto";
-      page.style.marginTop = "20px";
-      page.style.marginBottom = "20px";
-      page.style.maxWidth = "200mm";
-    })
-    */
+
     setTimeout(() => {
       const tasks = tabs.map(tab => html2canvas(tab))
       Promise.all(tasks).then(canvases =>
@@ -63,14 +52,6 @@ class Report extends Component {
     }, 1000);
 
 
-    /*
-    const pdf = new jsPDF({ unit: "px", format: "letter", userUnit: "px" });
-    pdf.html(input, { html2canvas: { scale: 0.57 } }).then(() => {
-      pdf.html(input, { html2canvas: { scale: 0.57 } }).then(() => {
-        pdf.save("test.pdf");
-      });
-    });
-    */
   }
 
   render() {

@@ -182,11 +182,8 @@ export const surveyJSON = {
         {
           type: "boolean",
           name: "resultados",
-          title: "11. Seu funcionário altera seus próprios resultados?",
+          title: "11. Seu funcionário não costuma alterar seus próprios resultados?",
           isRequired: true,
-          valueTrue: false, //sim = 0 , não = 10
-          valueFalse: true
-
         },
         {
           type: "text",
@@ -198,10 +195,8 @@ export const surveyJSON = {
           type: "boolean",
           name: "fofocas",
           title:
-            "12. Seu funcionário participa de fofocas no ambiente de trabalho?",
+            "12. Seu funcionário não costuma participar de fofocas no ambiente de trabalho?",
           isRequired: true,
-          valueTrue: false, //sim = 0, não = 10
-          valueFalse: true
         },
         {
           type: "text",
@@ -235,10 +230,8 @@ export const surveyJSON = {
           type: "boolean",
           name: "discussao2",
           title:
-            "14. Seu funcionário se envolve em discussões que não o dizem respeito?",
+            "14. Seu funcionário não costuma se envolver em discussões que não o dizem respeito?",
           isRequired: true,
-          valueTrue: false, //sim = 0, não = 10
-          valueFalse: true
         },
         {
           type: "text",
