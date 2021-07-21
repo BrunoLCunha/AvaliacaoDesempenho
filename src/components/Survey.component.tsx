@@ -4,6 +4,19 @@ import "survey-react/modern.css";
 import { useEffect, useState} from "react";
 import Report from './Report.component';
 
+import "survey-react/modern.css";
+
+var defaultThemeColors = Survey.StylesManager.ThemeColors["modern"];
+defaultThemeColors["$main-color"] = "#21252b";
+defaultThemeColors["$main-hover-color"] = "#66aeff";
+defaultThemeColors["$text-color"] = "#21252b";
+defaultThemeColors["$header-color"] = "#21252b";
+defaultThemeColors["$header-background-color"] = "#66aeff";
+defaultThemeColors["$body-container-background-color"] = "#66aeff";
+defaultThemeColors["$progress-text-color"] = "#21252b";
+defaultThemeColors["$add-button-color"]= "#21252b";
+defaultThemeColors["$remove-button-color"]= "#21252b";
+defaultThemeColors["$answer-background-color"] = "#66aeff";
 Survey.StylesManager.applyTheme("modern");
 
 export interface ISurveyComponent {
