@@ -12,12 +12,7 @@ class Report extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: 0,
-      style: {
-        marginTop: "20px",
-        marginBottom: "20px",
-        maxWidth: "200mm", 
-      }
+      loading: 0
     };
     this.printDocument = this.printDocument.bind(this);
   }
