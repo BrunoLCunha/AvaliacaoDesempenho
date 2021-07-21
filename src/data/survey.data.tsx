@@ -183,7 +183,7 @@ export const surveyJSON = {
           name: "resultados",
           title: "11. Seu funcionário altera seus próprios resultados?",
           isRequired: true,
-          rateValues: values,
+          rateValues: [0,10], //sim = 0, não = 10
           maxRateDescription: maxRate,
           minRateDescription: minRate,
         },
@@ -199,7 +199,7 @@ export const surveyJSON = {
           title:
             "12. Seu funcionário participa de fofocas no ambiente de trabalho?",
           isRequired: true,
-          rateValues: values,
+          rateValues: [0,10], //sim = 0, não = 10
           maxRateDescription: maxRate,
           minRateDescription: minRate,
         },
@@ -237,7 +237,7 @@ export const surveyJSON = {
           title:
             "14. Seu funcionário se envolve em discussões que não o dizem respeito?",
           isRequired: true,
-          rateValues: values,
+          rateValues: [0,10], //sim = 0, não = 10
           maxRateDescription: maxRate,
           minRateDescription: minRate,
         },
