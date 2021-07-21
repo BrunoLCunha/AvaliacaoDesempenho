@@ -31,9 +31,7 @@ function SurveyComponent(props: ISurveyComponent) {
   }, [props.surveyIndex]);
 
   if (complete)
-  {
-    return <Report survey={props.survey} />;
-  }
+  { return <Report survey={props.survey} />; }
   else
   {
     return (
