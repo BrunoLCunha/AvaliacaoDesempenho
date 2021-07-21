@@ -11,6 +11,7 @@ export const surveyJSON = {
   progressBarType: "buttons",
   showProgressBar: "top",
   showQuestionNumbers: "off",
+  showCompletePage: "off",
   pages: [
     {
       navigationTitle: "Desempenho",
@@ -183,11 +184,13 @@ export const surveyJSON = {
           name: "resultados",
           title: "11. Seu funcionário altera seus próprios resultados?",
           isRequired: true,
+
           rateValues: [0,10],
           maxRateDescription: maxRate,
           minRateDescription: minRate,
           valueTrue: false, //sim = 0 , não = 10
           valueFalse: true
+
         },
         {
           type: "text",
@@ -201,6 +204,7 @@ export const surveyJSON = {
           title:
             "12. Seu funcionário participa de fofocas no ambiente de trabalho?",
           isRequired: true,
+
           rateValues: [0,10],
           maxRateDescription: maxRate,
           minRateDescription: minRate,
@@ -241,6 +245,7 @@ export const surveyJSON = {
           title:
             "14. Seu funcionário se envolve em discussões que não o dizem respeito?",
           isRequired: true,
+
           rateValues: values,
           maxRateDescription: maxRate,
           minRateDescription: minRate,
@@ -292,9 +297,6 @@ export const surveyJSON = {
           name: "feedback",
           title: "17. Seu funcionário está disposto a receber feedbacks?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -324,9 +326,6 @@ export const surveyJSON = {
           title:
             "19. Seu funcionário auxilia outros colaboradores?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -355,9 +354,6 @@ export const surveyJSON = {
           title:
             "21. Seu funcionário tem dificuldade de lidar com pessoas diferentes dele (etnia, religião, orientação sexual, cargo)?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
