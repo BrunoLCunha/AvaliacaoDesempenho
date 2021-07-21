@@ -7,6 +7,7 @@ import * as Survey from "survey-react";
 import { surveyJSON as json } from "../../data/survey.data";
 import Worker from "../../context/avaliator-context";
 import { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import * as S from "./styles";
 
 function Home() {
@@ -14,8 +15,10 @@ function Home() {
   const [model, setModel] = useState<Survey.ReactSurveyModel>();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const context = useContext(Worker);
+  const history = useHistory();
 
   useEffect(() => {
+    if (context.worker === "default") history.push("/dashboard");
     setModel(new Survey.Model(json));
   }, []);
 

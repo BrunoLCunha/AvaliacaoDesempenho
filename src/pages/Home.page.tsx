@@ -10,7 +10,7 @@ function Home() {
   const validateUser = () => {
     if (password === "123456" && user === "admin") {
       setIsInvalid(false);
-      window.open("/avaliacao", "_self");
+      window.open("/dashboard", "_self");
       return;
     }
 

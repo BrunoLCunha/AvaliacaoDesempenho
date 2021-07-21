@@ -15,7 +15,7 @@ import { useState } from "react";
 
 function App() {
   const location = useLocation();
-  const [worker, setWorker] = useState<string>("sd");
+  const [worker, setWorker] = useState<string>("default");
 
   useEffect(() => {
     // @ts-ignore */
