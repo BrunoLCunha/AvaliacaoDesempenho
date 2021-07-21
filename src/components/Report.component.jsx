@@ -53,8 +53,7 @@ class Report extends Component {
   render() {
     const dat = this.props.survey.data;
     const survey = JSON.parse(JSON.stringify(this.props.survey));
-    let avaliador = "Fulano";
-    let avaliado = "Funcionario";
+    let avaliador = "Vinicius Matias - Cargo: Gerente de TI";
     let surveyinfo = {};
     let mean = {}
     let means = <div></div>;

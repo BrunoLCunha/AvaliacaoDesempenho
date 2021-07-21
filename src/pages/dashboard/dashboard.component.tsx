@@ -56,7 +56,7 @@ function Workers() {
             </Modal.Footer>
           </Modal>
           <H style={{ marginBottom: "32px" }}>
-            <h2>Escolha a pessoa avaliada</h2>
+            <h2>Escolha a pessoa para ser avaliada</h2>
           </H>
           <Content>
             <Row>
