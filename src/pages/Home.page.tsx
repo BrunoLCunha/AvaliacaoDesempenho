@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import Header from "../components/Header.component";
 import * as S from "./Home.styles";
 import Input from "../components/Input";
-
-import Button from "react-bootstrap/Button";
 
 function Home() {
   const [user, setUser] = useState("");

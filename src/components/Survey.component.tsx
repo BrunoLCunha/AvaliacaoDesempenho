@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import * as Survey from "survey-react";
-import * as SurveyPDF from "survey-pdf";
 import "survey-react/modern.css";
 import { useEffect } from "react";
 
@@ -23,30 +22,9 @@ function SurveyComponent(props: ISurveyComponent) {
     props.setSurveyIndex(survey.currentPageNo);
   }
 
-  const saveSurveyToPdf = (
-    json: JSON,
-    filename: string,
-    surveyModel: any,
-    pdfWidth: number,
-    pdfHeight: number
-  ) => {
-    var options = {
-      fontSize: 14,
-      margins: {
-        left: 10,
-        right: 10,
-        top: 10,
-        bot: 10,
-      },
-      format: [pdfWidth, pdfHeight],
-    };
-    var surveyPDF = new SurveyPDF.SurveyPDF(json, options);
-    surveyPDF.data = surveyModel.data;
-    surveyPDF.save(filename);
-  };
-
   useEffect(() => {
     props.survey.currentPageNo = props.surveyIndex;
+    // eslint-disable-next-line
   }, [props.surveyIndex]);
 
   return (
