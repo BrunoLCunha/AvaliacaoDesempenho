@@ -25,9 +25,9 @@ function SurveyComponent(props: ISurveyComponent) {
     //console.log(survey);
     props.setSurveyIndex(survey.currentPageNo);
   }
-  
   useEffect(() => {
     props.survey.currentPageNo = props.surveyIndex;
+    // eslint-disable-next-line
   }, [props.surveyIndex]);
 
   if (complete)

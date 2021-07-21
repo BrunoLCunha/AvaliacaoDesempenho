@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import Header from "../components/Header.component";
 import * as S from "./Home.styles";
 import Input from "../components/Input";
-
-import Button from "react-bootstrap/Button";
 
 function Home() {
   const [user, setUser] = useState("");
@@ -13,7 +10,7 @@ function Home() {
   const validateUser = () => {
     if (password === "123456" && user === "admin") {
       setIsInvalid(false);
-      window.open("/avaliacao", "_self");
+      window.open("/dashboard", "_self");
       return;
     }
 
