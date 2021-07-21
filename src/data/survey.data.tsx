@@ -207,7 +207,7 @@ export const surveyJSON = {
       ],
     },
     {
-      navigationTitle: "Habilidades socias/pessoais",
+      navigationTitle: "Habilidades sociais/pessoais",
       questions: [
         //resolução de problemas
         {
