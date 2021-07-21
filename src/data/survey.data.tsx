@@ -4,14 +4,16 @@ const minRate = "Pouco";
 
 export const surveyJSON = {
   elements: [1],
-  title: "Avaliação",
+  title: "Questionário de Performance",
   showTitle: true,
   innerIndent: 1,
   ignoreValidation: true,
-  progressBarType: "buttons",
   showProgressBar: "top",
   showQuestionNumbers: "off",
   showCompletePage: "off",
+  pagePrevText: "Voltar",
+  pageNextText: "Próximo",
+  completeText: "Concluir", 
   pages: [
     {
       navigationTitle: "Desempenho",
