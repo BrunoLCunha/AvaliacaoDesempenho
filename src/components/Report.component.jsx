@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import Spinner from "react-bootstrap/Spinner";
+import Worker from "../context/avaliator-context";
 
 class Report extends Component {
   constructor(props) {
@@ -52,8 +53,7 @@ class Report extends Component {
   render() {
     const dat = this.props.survey.data;
     const survey = JSON.parse(JSON.stringify(this.props.survey));
-    let avaliador = "Fulano";
-    let avaliado = "Funcionario";
+    let avaliador = "Vinicius Matias - Cargo: Gerente de TI";
     let surveyinfo = {};
     let mean = {}
     let means = <div></div>;
@@ -137,7 +137,10 @@ class Report extends Component {
           marginLeft: "auto",
           marginRight: "auto"
       }}>
-        <b><h5>Avaliado: {avaliado}</h5></b>
+        <Worker.Consumer>
+                {({ worker, setWorker }) => (
+        <b><h5>Avaliado: {worker}</h5></b>)}
+        </Worker.Consumer>
       </Row>
       <Row style={{ 
           marginTop: "30px",
@@ -257,7 +260,7 @@ class Report extends Component {
             </Row>
             <Row className="justify-content-md-center">
               <Col md="auto">
-                <Button variant="primary" href="/">
+                <Button variant="primary" href="/dashboard">
                   Voltar para o início
                 </Button>
               </Col>

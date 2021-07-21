@@ -42,7 +42,7 @@ function Header(props: IHeader) {
           {/* Header: Right side */}
           <div className="flex items-center">
             <Dropdown
-              title={<p style={{ color: "white" }}>Olá, Admin</p>}
+              title={<p style={{ color: "white" }}>Olá, Vinicius Matias</p>}
               placement="bottomEnd"
               style={{ backgroundColor: "#21252b", color: "white" }}
               menuStyle={{ backgroundColor: "#21252b", color: "white" }}
@@ -50,7 +50,7 @@ function Header(props: IHeader) {
             >
               <Dropdown.Item panel style={{ padding: 10, width: 160 }}>
                 <p>Autenticado como</p>
-                <strong>Administrador</strong>
+                <strong>Vinicius Matias</strong>
               </Dropdown.Item>
               <S.DropdownButton onSelect={() => window.open("/", "_self")}>
                Sair
