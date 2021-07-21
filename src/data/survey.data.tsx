@@ -11,6 +11,7 @@ export const surveyJSON = {
   progressBarType: "buttons",
   showProgressBar: "top",
   showQuestionNumbers: "off",
+  showCompletePage: "off",
   pages: [
     {
       navigationTitle: "Desempenho",
@@ -181,11 +182,8 @@ export const surveyJSON = {
         {
           type: "boolean",
           name: "resultados",
-          title: "11. Seu funcionário altera seus próprios resultados?",
+          title: "11. Seu funcionário não costuma alterar seus próprios resultados?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -197,11 +195,8 @@ export const surveyJSON = {
           type: "boolean",
           name: "fofocas",
           title:
-            "12. Seu funcionário participa de fofocas no ambiente de trabalho?",
+            "12. Seu funcionário não costuma participar de fofocas no ambiente de trabalho?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -235,11 +230,8 @@ export const surveyJSON = {
           type: "boolean",
           name: "discussao2",
           title:
-            "14. Seu funcionário se envolve em discussões que não o dizem respeito?",
+            "14. Seu funcionário não costuma se envolver em discussões que não o dizem respeito?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -286,9 +278,6 @@ export const surveyJSON = {
           name: "feedback",
           title: "17. Seu funcionário está disposto a receber feedbacks?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -318,9 +307,6 @@ export const surveyJSON = {
           title:
             "19. Seu funcionário auxilia outros colaboradores?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -343,16 +329,12 @@ export const surveyJSON = {
           title: "Comentários adicionais:",
           isRequired: false,
         },
-        //relacionamento interpessoal   MUDAR "RATING" PARA PERGUNTA DE SIM OU NÃO
         {
           type: "boolean",
           name: "discurso",
           title:
             "21. Seu funcionário tem dificuldade de lidar com pessoas diferentes dele (etnia, religião, orientação sexual, cargo)?",
           isRequired: true,
-          rateValues: values,
-          maxRateDescription: maxRate,
-          minRateDescription: minRate,
         },
         {
           type: "text",
@@ -414,3 +396,34 @@ export const surveyJSON = {
     },
   ],
 };
+
+/*
+var funcionario = {
+  questions: [
+    {
+      type: "dropdown",
+        name: "funcionário",
+        title: "Selecionar o funcionário avaliado",
+        isRequired: true,
+        colCount: 0,
+        choices: [
+          "Alesandro Nunes Garcia",
+          "Alicia Bingre Álvares",
+          "Bruna Ataíde Moutinho",
+          "Elisa Loio Castanheda",
+          "Jacira Tavares Lamenha",
+          "Jadson Abrantes Abelho",
+          "João Felipe Moraes",
+          "Luciana Aparecida da Silva",
+          "Melany Simas Quinta",
+          "Patrício Machado Anhaia",
+          "Pietro Sanches Mourão",
+          "Sancho Quintais Amoedo",
+          "Simone Morgado Valadim",
+          "Valdir Gimenez Carvalho",
+          "Waldomiro Ribeiro dos Santos"
+        ]
+    }
+  ]
+};
+*/
